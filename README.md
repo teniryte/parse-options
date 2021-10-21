@@ -29,34 +29,36 @@ yarn add parse-options;
 
 ## Example
 
+**Command:**
+
+```sh
+node app.js copy -m --lim 5 --exclude 'node_modules' test.txt
+```
+
+`app.js`:
+
 ```js
 const parseOptions = require('parse-options');
 
 let options = parseOptions(
-
-  // Example pattern
+  // Example pattern.
+  // Contains two commands (command="copy", file="test.txt")
+  // and three parameters (boolean minimize=true, number limit=5
+  // and string exclude="node_modules")
   `command file @minimize|min|m #limit|lim|l $exclude|e`,
-
-  // Example argv
-  // $ node app.js copy -m --lim 5 --exclude='node_modules' test.txt
   process.argv
-
 );
 
 options === {
-
   // Commands list
   $commands: ['copy', 'test.txt'],
-
   // Named commands values
   command: 'copy',
   file: 'test.txt',
-
-  // Arguments
+  // Named parameters
   minimize: true,
   limit: 5,
   exclude: 'node_modules',
-
 };
 ```
 
