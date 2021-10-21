@@ -1,0 +1,35 @@
+{
+  "name": "parse-options",
+  "version": "0.0.1",
+  "main": "./lib/index.js",
+  "description": "Parse Command Line Options",
+  "keywords": [
+    "cli",
+    "argv",
+    "arguments",
+    "args",
+    "options",
+    "parse"
+  ],
+  "homepage": "https://github.com/teniryte/parse-options",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "node ./node_modules/.bin/jest"
+  },
+  "author": {
+    "name": "teniryte",
+    "email": "teniryte@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:teniryte/parse-options.git"
+  },
+  "publish": true,
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  }
+}
