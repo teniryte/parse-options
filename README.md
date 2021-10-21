@@ -6,6 +6,15 @@
 
 Parse Command Line Options
 
+- [parse-options](#parse-options)
+  - [Installation](#installation)
+  - [Example](#example)
+  - [Using](#using)
+    - [Pattern](#pattern)
+      - [Parameters](#parameters)
+      - [Commands](#commands)
+  - [Other Example](#other-example)
+
 ## Installation
 
 ```sh
