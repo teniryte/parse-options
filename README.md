@@ -46,7 +46,12 @@ let options = parseOptions(
   // and three parameters (boolean minimize=true, number limit=5
   // and string exclude="node_modules")
   `command file @minimize|min|m #limit|lim|l $exclude|e`,
-  process.argv
+  // Command line arguments
+  process.argv,
+  // Handlers applied after parsing
+  {
+    file => path.resolve(process.env, file),
+  }
 );
 
 options === {

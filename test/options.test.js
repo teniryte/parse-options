@@ -164,4 +164,25 @@ describe('argv', () => {
       exclude: 'node_modules',
     });
   });
+
+  test('applies handlers', () => {
+    expect(
+      parseOptions(
+        'root $output|o',
+        ['node', 'app.js', 'test/root', '-o', 'test/output'],
+        {
+          root(val) {
+            return 'work/' + val;
+          },
+          output(val) {
+            return 'static/' + val;
+          },
+        }
+      )
+    ).toEqual({
+      $commands: ['test/root'],
+      root: 'work/test/root',
+      output: 'static/test/output',
+    });
+  });
 });
