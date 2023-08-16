@@ -1,25 +1,24 @@
 {
   "name": "parse-options",
-  "version": "1.0.6",
-  "main": "./lib/index.js",
-  "description": "Parse Command Line Options",
+  "version": "2.0.0",
+  "homepage": "https://github.com/teniryte/parse-options",
+  "description": "CLI arguments parser",
   "keywords": [
     "cli",
     "argv",
     "arguments",
     "args",
+    "argv",
     "options",
     "parse"
   ],
-  "homepage": "https://github.com/teniryte/parse-options",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/jest"
+    "build": "tsc",
+    "dev": "nodemon -q --watch 'src/**/*' --watch 'src/**/*' --ext 'ts,json' --exec 'ts-node src/app.ts'",
+    "test": "nodemon -q --watch 'test/**/*' --watch 'src/**/*' --ext 'ts,json' --exec 'mocha -w -r ts-node/register test/index.test.ts'"
   },
+  "license": "MIT",
   "author": {
     "name": "teniryte",
     "email": "teniryte@gmail.com"
@@ -29,7 +28,12 @@
     "url": "git@github.com:teniryte/parse-options.git"
   },
   "publish": true,
-  "publishConfig": {
-    "registry": "http://registry.npmjs.org"
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
   }
 }
